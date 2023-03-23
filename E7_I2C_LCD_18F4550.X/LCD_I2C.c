@@ -41,7 +41,7 @@ void LCD_I2C_Databus(char ctrl,char cmd){
     //Registro de datos o caracter
     if(ctrl == 1){
         data = data | PIN0_RS;
-    }else{ //control/instrucción
+    }else{ //control/instrucciÃ³n
         data = data &~ PIN0_RS;
     }
     
@@ -59,8 +59,7 @@ void LCD_I2C_nibble(char ctrl,char cmd){
 
 
 void LCD_I2C_Init(void){
-    //CONFIGURACION MODO MAESTRO
-    Master_Mode();
+    
     I2C_Start();
     I2C_ADDRESS_SLAVE((DIREC_PCF8574 | (DIREC_A0_A2<<1)),0x00);
     I2C_Write_Data(0x00);
