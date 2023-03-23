@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
     I2C_ADDRESS_SLAVE(0x10,0x00);
     I2C_Stop();
     */
-    
+    Master_Mode();
     LCD_I2C_Init();
     
     LCD_I2C_WriteText(0,0,"-------PRUEBA-------");
