@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
     Interrupt_TIMER();
     Timer1_enable();
     for(;;){
-        /*Temporizar 10 segundos*/    
+        /*Temporizar 0.17 segundos*/    
         if(cont>=2){
             LATAbits.LATA0 = ~LATAbits.LATA0;
             cont = 0;
