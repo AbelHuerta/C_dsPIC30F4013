@@ -1,0 +1,109 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"16 ./Configuracion.h
+[p x PLLSEL  =  PLL4X    ]
+"17
+[p x CFGPLLEN  =  OFF    ]
+"18
+[p x CPUDIV  =  NOCLKDIV ]
+"19
+[p x LS48MHZ  =  SYS24X4 ]
+"22
+[p x FOSC  =  INTOSCIO   ]
+"23
+[p x PCLKEN  =  ON       ]
+"24
+[p x FCMEN  =  OFF       ]
+"25
+[p x IESO  =  OFF        ]
+"28
+[p x nPWRTEN  =  ON      ]
+"29
+[p x BOREN  =  SBORDIS   ]
+"30
+[p x BORV  =  190        ]
+"31
+[p x nLPBOR  =  OFF      ]
+"34
+[p x WDTEN  =  OFF       ]
+"35
+[p x WDTPS  =  32768     ]
+"38
+[p x CCP2MX  =  RC1      ]
+"39
+[p x PBADEN  =  ON       ]
+"40
+[p x T3CMX  =  RC0       ]
+"41
+[p x SDOMX  =  RB3       ]
+"42
+[p x MCLRE  =  ON        ]
+"45
+[p x STVREN  =  ON       ]
+"46
+[p x LVP  =  ON          ]
+"47
+[p x ICPRT  =  OFF       ]
+"48
+[p x XINST  =  OFF       ]
+"51
+[p x CP0  =  OFF         ]
+"52
+[p x CP1  =  OFF         ]
+"53
+[p x CP2  =  OFF         ]
+"54
+[p x CP3  =  OFF         ]
+"57
+[p x CPB  =  OFF         ]
+"58
+[p x CPD  =  OFF         ]
+"61
+[p x WRT0  =  OFF        ]
+"62
+[p x WRT1  =  OFF        ]
+"63
+[p x WRT2  =  OFF        ]
+"64
+[p x WRT3  =  OFF        ]
+"67
+[p x WRTC  =  OFF        ]
+"68
+[p x WRTB  =  OFF        ]
+"69
+[p x WRTD  =  OFF        ]
+"72
+[p x EBTR0  =  OFF       ]
+"73
+[p x EBTR1  =  OFF       ]
+"74
+[p x EBTR2  =  OFF       ]
+"75
+[p x EBTR3  =  OFF       ]
+"78
+[p x EBTRB  =  OFF       ]
+[v F40 `*Vuc ~T0 @X0 1 t ]
+"3 Configuracion.c
+[; ;Configuracion.c: 3: volatile uint8_t *const pOSCCON_REG = ((volatile uint8_t *)0xFD3);
+[v _pOSCCON_REG `C*Vuc ~T0 @X0 1 e ]
+[i _pOSCCON_REG
+-> -> 4051 `i `*Vuc
+]
+"6
+[; ;Configuracion.c: 6: void OSC_16Mhz_Init(void){
+[v _OSC_16Mhz_Init `(v ~T0 @X0 1 ef ]
+{
+[e :U _OSC_16Mhz_Init ]
+[f ]
+"8
+[; ;Configuracion.c: 8:     *pOSCCON_REG &= ~(1<<0);
+[e =& *U _pOSCCON_REG -> ~ << -> 1 `i -> 0 `i `uc ]
+"9
+[; ;Configuracion.c: 9:     *pOSCCON_REG |= (1<<1);
+[e =| *U _pOSCCON_REG -> << -> 1 `i -> 1 `i `uc ]
+"11
+[; ;Configuracion.c: 11:     *pOSCCON_REG |= (1<<4) | (1<<5) | (1<<6);
+[e =| *U _pOSCCON_REG -> | | << -> 1 `i -> 4 `i << -> 1 `i -> 5 `i << -> 1 `i -> 6 `i `uc ]
+"12
+[; ;Configuracion.c: 12: }
+[e :UE 1 ]
+}
